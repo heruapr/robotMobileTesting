@@ -4,16 +4,16 @@ Library  AppiumLibrary
 
 *** Variables ***
 ${ANDROID_AUTOMATION_NAME}    UIAutomator2
-${ANDROID_APP}                ${CURDIR}/demoapp/lion-parcel-app.apk
+${ANDROID_APP}                path/to/app
 ${ANDROID_PLATFORM_NAME}      Android
 ${ANDROID_PLATFORM_VERSION}   %{ANDROID_PLATFORM_VERSION=12}
 
 *** Test Cases ***
 Cek Tarif
   Given Open Test Application
-#  When I click setuju on kebijakan dan privasi
-#  And I login with valid account
-  And I click cek tarif button
+  When I click setuju on kebijakan dan privasi
+  And I login with valid account
+  When I click cek tarif button
   And I fill in origin and destination address
   Then I click cek tarif
 
@@ -35,7 +35,7 @@ I login with valid account
   Wait Until Element Is Visible   xpath=//android.widget.Button[contains(@text, "Masuk")]
   Click Element   xpath=//android.widget.Button[contains(@text, "Masuk")]
   Wait Until Element Is Visible  xpath=//android.widget.EditText[contains(@text, "Nomor Handphone")]
-  Input Text  xpath=//android.widget.EditText[contains(@text, "Nomor Handphone")]  081388726962
+  Input Text  xpath=//android.widget.EditText[contains(@text, "Nomor Handphone")]  [fill with your phone number]
   Input Text  xpath=//android.widget.EditText[contains(@text, "Password")]  password
   Click Element   xpath=//android.widget.Button[contains(@text, "Masuk")]
 
