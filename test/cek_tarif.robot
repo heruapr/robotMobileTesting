@@ -1,5 +1,4 @@
 *** Settings ***
-Documentation  Simple example using AppiumLibrary
 Library  AppiumLibrary
 
 *** Variables ***
